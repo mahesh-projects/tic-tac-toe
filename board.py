@@ -30,19 +30,18 @@ class Board():
         else:
             return False
 
-    def win_check(self, mark):
-        if mark in self.board:
-            mark_at_indices = [i for i, x in enumerate(self.board) if x == mark]
-            print(mark_at_indices)
+
+    def win_check(self, marker):
+        if marker in self.board:
+            marker_at_indices = [i for i, x in enumerate(self.board) if x == marker]
+            print(marker_at_indices)
             for comb in self.__winning_combination:
-                if set(comb).issubset(set(mark_at_indices)):
+                if set(comb).issubset(set(marker_at_indices)):
                     return True
 
+    #Given a marker and position, Assign the marker to position on board
     def place_marker(self, marker, position):
-        if position in range(1,10):
-            self.board[position] = marker
-        else:
-            print("Position can be an integer from 1 to 9")
+        self.board[position] = marker
 
 
 if __name__ == "__main__":
