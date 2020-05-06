@@ -5,7 +5,6 @@ class Board():
         self.__winning_combination = [(1,2,3), (2,5,8), (4,5,6), (1,4,7), (3,6,9),
                                 (7,8,9), (1,5,9), (3,5,7)]
 
-
     #Creating an empty board is a private method
     def __create_empty_board(self):
         board = ["#"]
@@ -39,27 +38,12 @@ class Board():
                 if set(comb).issubset(set(mark_at_indices)):
                     return True
 
-    # def player_choice(self):
-    #     while True:
-    #         try:
-    #             ##position = int(input("Please pick a number from 1 to 9: "))
-    #             if position in range(1, 10):
-    #                 if space_check(self.board, position):
-    #                     return position
-    #                 else:
-    #                     print("Position is not available for use.")
-    #                     continue
-    #         except:
-    #             print("Position should be a number from 1 to 9")
-
     def place_marker(self, marker, position):
-        if (marker == 'X' or marker == 'O'):
-            if position in range(1,10):
-                self.board[position] = marker
-            else:
-                print("Position can be an integer from 1 to 9")
+        if position in range(1,10):
+            self.board[position] = marker
         else:
-            print("Please pick a marker as 'X' or 'O': ")
+            print("Position can be an integer from 1 to 9")
+
 
 if __name__ == "__main__":
     board = Board()
