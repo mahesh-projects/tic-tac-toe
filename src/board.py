@@ -38,16 +38,14 @@ class Board():
     def win_check(self, marker):
         if marker in self.board:
             marker_at_indices = [i for i, x in enumerate(self.board) if x == marker]
-            print(marker_at_indices)
+            #print(marker_at_indices)
             for comb in self.__winning_combination:
                 if set(comb).issubset(set(marker_at_indices)):
                     return True
 
     #Given a marker and position, Assign the marker to position on board
     def place_marker(self, marker, position):
-        self.board[position] = marker
-
-
-if __name__ == "__main__":
-    board = Board()
-    board.display_board(board)
+        try:
+            self.board[position] = marker
+        except IndexError:
+            return "Index out of range error"

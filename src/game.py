@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
         #If board is not full, then continue playing
         while not board.full_board_check():
-            print('game on')
+            #print('game on')
             if board.win_check('X'): #Break if player with X marker has won
                 print("Player with 'X' marker won!")
                 break
