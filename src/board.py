@@ -23,7 +23,7 @@ class Board():
 
     #Given a player's choice of position check if it is available for use
     def space_check(self, position):
-        if len(self.board) <= 10 and self.board[position] == PLACEHOLDER:
+        if self.board[position] == PLACEHOLDER:
             return True
         else:
             return False
