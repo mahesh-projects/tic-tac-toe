@@ -33,7 +33,7 @@ class Board():
 
     #Check if the board is full
     def full_board_check(self):
-        if len(self.board) == 10 and len([i for i in self.board if i == PLACEHOLDER]) == 0:
+        if len([i for i in self.board if i == PLACEHOLDER]) == 0:
             return True
         else:
             return False
