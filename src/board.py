@@ -17,9 +17,12 @@ class Board():
     #Display the board
     def display_board(self):
         i = 9
+        board_as_str = ''
         while i > 1:
-            print("  {} |  {} |  {} ".format(self.board[i-2], self.board[i-1], self.board[i]))
+            board_as_str += ''.join("  {} |  {} |  {}{}".format(self.board[i-2], self.board[i-1], self.board[i], "\n"))
+            #print("  {} |  {} |  {} ".format(self.board[i-2], self.board[i-1], self.board[i]))
             i -= 3
+        return board_as_str
 
     #Given a player's choice of position check if it is available for use
     def space_check(self, position):

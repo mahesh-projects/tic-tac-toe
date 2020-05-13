@@ -41,7 +41,7 @@ if __name__ == "__main__":
     while True:
         # Set the game up here
         board = Board()
-        board.display_board() #Display an empty board
+        print(board.display_board()) #Display an empty board
 
         first_player = choose_first() #Randomly pick which player goes first
         print(f"Player #{first_player} will start")
@@ -77,7 +77,7 @@ if __name__ == "__main__":
                 board.place_marker(second_player_marker, position)
                 marker = first_player_marker
 
-            board.display_board()
+            print(board.display_board())
 
         if not replay():
             break

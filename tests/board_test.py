@@ -10,6 +10,16 @@ class BoardTest(unittest.TestCase):
     def test_create_a_board(self):
         self.assertEqual(self.board.board, ['#',' ',' ',' ',' ',' ',' ',' ',' ',' '])
 
+### Display Board test
+    def test_display_empty_board(self):
+        board_as_str = '    |    |   \n    |    |   \n    |    |   \n'
+        self.assertEqual(self.board.display_board(), board_as_str)
+
+    def test_display_full_board(self):
+        self.board.board = ['#','X','O','X','O','X','O','X','O','X']
+        board_as_str = '  X |  O |  X\n  O |  X |  O\n  X |  O |  X\n'
+        self.assertEqual(self.board.display_board(), board_as_str)
+
 ###Full Board Tests
     def test_full_board_check_full(self):
         self.board.board = ['#','X','O','X','O','X','O','X','O','X']
