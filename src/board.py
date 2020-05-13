@@ -23,17 +23,11 @@ class Board():
 
     #Given a player's choice of position check if it is available for use
     def space_check(self, position):
-        if self.board[position] == PLACEHOLDER:
-            return True
-        else:
-            return False
+        return self.board[position] == PLACEHOLDER
 
     #Check if the board is full
     def full_board_check(self):
-        if len([i for i in self.board if i == PLACEHOLDER]) == 0:
-            return True
-        else:
-            return False
+        return len([i for i in self.board if i == PLACEHOLDER]) == 0
 
     #Check if a given marker has won based on __winning_combination
     def win_check(self, marker):
