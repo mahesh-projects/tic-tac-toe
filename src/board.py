@@ -1,3 +1,4 @@
+PLACEHOLDER = " "
 class Board():
 
     def __init__(self):
@@ -10,7 +11,7 @@ class Board():
     def __create_empty_board(self):
         board = ["#"]
         for i in range(1,10): #Create an empty board with 9 blank elements
-            board.append(" ")
+            board.append(PLACEHOLDER)
         return board
 
     #Display the board
@@ -22,14 +23,14 @@ class Board():
 
     #Given a player's choice of position check if it is available for use
     def space_check(self, position):
-        if len(self.board) <= 10 and self.board[position] == " ":
+        if len(self.board) <= 10 and self.board[position] == PLACEHOLDER:
             return True
         else:
             return False
 
     #Check if the board is full
     def full_board_check(self):
-        if len(self.board) == 10 and len([i for i in self.board if i == ' ']) == 0:
+        if len(self.board) == 10 and len([i for i in self.board if i == PLACEHOLDER]) == 0:
             return True
         else:
             return False
