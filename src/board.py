@@ -16,12 +16,9 @@ class Board():
 
     #Display the board
     def display_board(self):
-        i = 9
         board_as_str = ''
-        while i > 1:
+        for i in range(9,1,-3):
             board_as_str += ''.join("  {} |  {} |  {}{}".format(self.board[i-2], self.board[i-1], self.board[i], "\n"))
-            #print("  {} |  {} |  {} ".format(self.board[i-2], self.board[i-1], self.board[i]))
-            i -= 3
         return board_as_str
 
     #Given a player's choice of position check if it is available for use
