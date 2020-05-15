@@ -3,21 +3,22 @@ class Board():
     def __init__(self):
         self.board = self.__create_empty_board()
         #Keep winning combination a private attribute
-        self.__winning_combination = [(1,2,3), (2,5,8), (4,5,6), (1,4,7), (3,6,9),
-                                (7,8,9), (1,5,9), (3,5,7)]
+        self.__winning_combination = [(1, 2, 3), (2, 5, 8), (4, 5, 6), (1, 4, 7), (3, 6, 9),
+                                      (7, 8, 9), (1, 5, 9), (3, 5, 7)]
 
     #Creating an empty board is a private method
     def __create_empty_board(self):
         board = ["#"]
-        for _ in range(1,10): #Create an empty board with 9 blank elements
+        for _ in range(1, 10): #Create an empty board with 9 blank elements
             board.append(self.PLACEHOLDER)
         return board
 
     #Display the board
     def display_board(self):
         board_as_str = ''
-        for i in range(9,1,-3):
-            board_as_str += ''.join("  {} |  {} |  {}{}".format(self.board[i-2], self.board[i-1], self.board[i], "\n"))
+        for i in range(9, 1, -3):
+            board_as_str += ''.join("  {} |  {} |  {}{}".format
+                                    (self.board[i-2], self.board[i-1], self.board[i], "\n"))
         return board_as_str
 
     #Given a player's choice of position check if it is available for use
