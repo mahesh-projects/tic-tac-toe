@@ -9,7 +9,7 @@ class Board():
     #Creating an empty board is a private method
     def __create_empty_board(self):
         board = ["#"]
-        for i in range(1,10): #Create an empty board with 9 blank elements
+        for _ in range(1,10): #Create an empty board with 9 blank elements
             board.append(self.PLACEHOLDER)
         return board
 
